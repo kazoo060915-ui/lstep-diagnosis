@@ -68,7 +68,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kikyo-guide.pdf',
     tubo: '胃の元気を底上げする「足三里・中脘のツボ押し集」',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kikyo.pdf',
-    video: '胃腸を元気に動かす！基本の胃トレーニング動画',
+    video: '胃腸を元気に動かす！基本の胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-1'
   },
   'kitai': {
@@ -79,7 +79,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kitai-guide.pdf',
     tubo: 'みぞおちの緊張を緩める「太衝・壇中のツボ押し集」',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kitai.pdf',
-    video: '自律神経をリラックスさせて胃を動かす胃トレ動画',
+    video: '自律神経をリラックスさせて胃を動かす胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-2'
   },
   'inkyo': {
@@ -90,7 +90,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/inkyo-guide.pdf',
     tubo: '潤いを補い熱を逃がす「太渓・三陰交のツボ押し集」',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-inkyo.pdf',
-    video: '乾いた胃を優しく労わるリラクゼーション胃トレ動画',
+    video: '乾いた胃を優しく労わるリラクゼーション胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-3'
   },
   'tansitsu': {
@@ -101,7 +101,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tansitsu-guide.pdf',
     tubo: '胃腸の水分代謝を促進する「豊隆・陰陵泉のツボ押し集」',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-tansitsu.pdf',
-    video: 'お腹の巡りを活性化して老廃物を流す胃トレ動画',
+    video: 'お腹の巡りを活性化して老廃物を流す胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-4'
   },
   'shokushaku': {
@@ -112,7 +112,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/shokushaku-guide.pdf',
     tubo: '食べたものの排泄をスムーズにする「天枢・下脘のツボ押し集」',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-shokushaku.pdf',
-    video: '胃の蠕動（ぜんどう）運動を呼び覚ます胃トレ動画',
+    video: '胃の蠕動（ぜんどう）運動を呼び覚ます胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-5'
   },
 
@@ -125,7 +125,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kikyo-kitai.pdf',
     tubo: '元気を補い気の巡りをスムーズにするツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kikyo-kitai.pdf',
-    video: '気虚＋気滞のためのリセット胃トレーニング動画',
+    video: '気虚＋気滞のためのリセット胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-6'
   },
   'kikyo_inkyo': {
@@ -136,7 +136,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kikyo-inkyo.pdf',
     tubo: '胃の生命力を底上げして潤すツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kikyo-inkyo.pdf',
-    video: '繊細な胃を優しくいたわる胃トレーニング動画',
+    video: '繊細な胃を優しくいたわる胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-7'
   },
   'kikyo_tansitsu': {
@@ -147,7 +147,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kikyo-tansitsu.pdf',
     tubo: '胃腸を活性化し水分代謝を促すツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kikyo-tansitsu.pdf',
-    video: '重だるい胃を軽やかにする胃トレーニング動画',
+    video: '重だるい胃を軽やかにする胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-8'
   },
   'kikyo_shokushaku': {
@@ -158,7 +158,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kikyo-shokushaku.pdf',
     tubo: '弱った胃の消化力をやさしく支えるツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kikyo-shokushaku.pdf',
-    video: '胃の負担を減らし消化を促す胃トレーニング動画',
+    video: '胃の負担を減らし消化を促す胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-9'
   },
   'kitai_inkyo': {
@@ -169,7 +169,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kitai-inkyo.pdf',
     tubo: '高ぶる神経を落ち着かせ潤いをチャージするツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kitai-inkyo.pdf',
-    video: '自律神経の緊張を解きほぐす胃トレーニング動画',
+    video: '自律神経の緊張を解きほぐす胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-10'
   },
   'kitai_tansitsu': {
@@ -180,7 +180,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kitai-tansitsu.pdf',
     tubo: '喉とお腹のつかえを通すツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kitai-tansitsu.pdf',
-    video: '巡りとデトックスを加速する胃トレーニング動画',
+    video: '巡りとデトックスを加速する胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-11'
   },
   'kitai_shokushaku': {
@@ -191,7 +191,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/kitai-shokushaku.pdf',
     tubo: 'みぞおちの詰まりを押し流すツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-kitai-shokushaku.pdf',
-    video: '胃の緊張をリセットして排泄を助ける胃トレ動画',
+    video: '胃の緊張をリセットして排泄を助ける胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-12'
   },
   'inkyo_tansitsu': {
@@ -202,7 +202,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/inkyo-tansitsu.pdf',
     tubo: '水分バランスを整えるツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-inkyo-tansitsu.pdf',
-    video: '水はけを整えて胃を正常化する胃トレ動画',
+    video: '水はけを整えて胃を正常化する胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-13'
   },
   'inkyo_shokushaku': {
@@ -224,7 +224,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tansitsu-shokushaku.pdf',
     tubo: '強力に胃腸の排泄をサポートするツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-tansitsu-shokushaku.pdf',
-    video: '胃の滞りをすっきり解消する胃トレ動画',
+    video: '胃の滞りをすっきり解消する胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-15'
   },
 
@@ -237,7 +237,7 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/healthy-guide.pdf',
     tubo: '日々の疲れを残さない万能メンテナンスツボ押し集',
     tubo_url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/tubo-healthy.pdf',
-    video: '健康な胃を一生保つための基本胃トレ動画',
+    video: '健康な胃を一生保つための基本胃のトレーニング動画',
     video_url: 'https://vimeo.com/your-video-id-16'
   }
 };
