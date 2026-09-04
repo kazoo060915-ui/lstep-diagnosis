@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>胃の専門家監修 無料体質診断 | 薬膳・胃トレ処方箋</title>
+  <meta name="description" content="簡単な25の質問からあなたの胃の弱りの根本原因（気虚・気滞・陰虚・痰湿・食積）を特定し、あなた専用の薬膳ガイドや胃トレーニング動画をお届けします。">
+  <link rel="stylesheet" href="style.css">
+  <!-- LINE Front-end Framework (LIFF) SDK -->
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- ヘッダー -->
+    <header class="site-header">
+      <span class="header-badge">胃の専門家 カズ先生 監修</span>
+      <h1 class="site-title">東洋医学 胃腸・体質診断</h1>
+      <p class="site-subtitle">〜 あなたの胃の不調の根本原因を見つける 〜</p>
+    </header>
+
+    <div class="content-wrapper">
+
+      <!-- ==============================================
+           1. 診断入力フォーム セクション
+           ============================================== -->
+      <main id="diagnosis-form-section">
+        <div class="intro-card">
+          胃の不調（もたれ、張り、痛み、食欲不振）には、東洋医学で<strong>5つのタイプ（気虚・気滞・陰虚・痰湿・食積）</strong>があります。<br>
+          当てはまる症状をチェックして、あなたに最適な薬膳・胃トレ動画を受け取ってください。
+        </div>
+
+        <!-- お名前入力欄 -->
+        <div class="form-group">
+          <label class="form-label" for="user-name-input">お名前（LINEのニックネーム可）</label>
+          <input type="text" id="user-name-input" class="text-input" placeholder="例: かず" maxlength="20">
+        </div>
+
+        <!-- 流入元アンケート -->
+        <div class="form-group">
+          <label class="form-label">この診断をどこで知りましたか？</label>
+          <p class="form-label-desc">該当するものを1つお選びください</p>
+          <div id="source-options-container" class="radio-options">
+            <!-- JavaScriptからレンダリング -->
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px dashed #e2e8f0; margin: 28px 0;">
+
+        <!-- 設問一覧（STEP 1〜5） -->
+        <div id="questions-container">
+          <!-- JavaScriptから動的レンダリング -->
+        </div>
+
+        <!-- 診断ボタン -->
+        <div class="submit-container">
+          <div>
+            <span id="checked-count-badge" class="progress-info">0個 選択中</span>
+          </div>
+          <button type="button" id="submit-btn" class="primary-btn">
+            診断結果を見る ➔
+          </button>
+          <p style="font-size: 11.5px; color: #888; margin-top: 10px;">
+            ※診断結果はLINEのトークにも自動でお届けします
+          </p>
+        </div>
+      </main>
+
+      <!-- ==============================================
+           2. 診断結果表示 セクション（初期状態は非表示）
+           ============================================== -->
+      <section id="diagnosis-result-section" class="hidden">
+        
+        <!-- メイン結果カード -->
+        <div class="result-card">
+          <p id="res-user-name" class="result-user-greeting">〇〇 さんの診断結果</p>
+          <div style="text-align: center;">
+            <span class="result-badge">判定タイプ</span>
+            <h2 id="res-type-title" class="result-title">気虚 ＋ 気滞 混合タイプ</h2>
+            <p id="res-type-subtitle" class="result-subtitle">エネルギー不足とストレス停滞が重なり、胃が動かない状態</p>
+          </div>
+          
+          <div id="res-type-desc" class="result-desc-box">
+            解説文がここに表示されます。
+          </div>
+        </div>
+
+        <!-- スコアグラフ / メーター -->
+        <div class="score-summary-box">
+          <h3 class="score-summary-title">
+            <span>📊</span> あなたの体質スコア内訳
+          </h3>
+          <div id="scores-chart-container" class="scores-list">
+            <!-- JavaScriptで描画 -->
+          </div>
+        </div>
+
+        <!-- あなた専用のプレゼント（PDF・動画） -->
+        <div class="present-section">
+          <h3 class="present-section-title">
+            <span>🎁</span> あなた専用の特典・処方箋
+          </h3>
+
+          <!-- 特典1: 薬膳ガイド -->
+          <a id="link-yakuzen" href="#" target="_blank" rel="noopener" class="present-card">
+            <span class="present-card-badge">PDFガイド</span>
+            <h4 id="text-yakuzen-title" class="present-card-title">薬膳ガイド</h4>
+            <span class="present-card-link-text">無料で受け取る・読む ➔</span>
+          </a>
+
+          <!-- 特典2: 黄金のツボ押し集 -->
+          <a id="link-tubo" href="#" target="_blank" rel="noopener" class="present-card">
+            <span class="present-card-badge">PDFガイド</span>
+            <h4 id="text-tubo-title" class="present-card-title">黄金のツボ押し集</h4>
+            <span class="present-card-link-text">ツボ押し一覧を見る ➔</span>
+          </a>
+
+          <!-- 特典3: 胃トレ動画 (Vimeo) -->
+          <a id="link-video" href="#" target="_blank" rel="noopener" class="present-card">
+            <span class="present-card-badge">動画レッスン</span>
+            <h4 id="text-video-title" class="present-card-title">胃のトレーニング動画</h4>
+            <span class="present-card-link-text">動画を視聴する ➔</span>
+          </a>
+        </div>
+
+        <!-- 個別相談・体験面談への誘導 -->
+        <div class="consultation-card">
+          <span class="consultation-badge">薬剤師による個別サポート</span>
+          <h3 class="consultation-title">最短ルートのリセット法を個別で相談する</h3>
+          <p class="consultation-desc">
+            お一人おひとりの生活リズムや胃の状態に合わせた「最優先のケア」をお伝えします。<br>
+            内側からスッキリ軽い体を取り戻したい方は、無料体験面談をご活用ください。
+          </p>
+          <a id="link-consultation" href="#" target="_blank" rel="noopener" class="consultation-btn">
+            無料体験面談の枠を確保する ➔
+          </a>
+        </div>
+
+        <!-- やり直しボタン -->
+        <button type="button" id="retry-btn" class="secondary-btn">
+          もう一度診断する
+        </button>
+
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ローディング表示 -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="spinner"></div>
+    <p class="loading-text">体質バランスを分析中...</p>
+  </div>
+
+  <!-- スクリプト -->
+  <script src="diagnosis_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

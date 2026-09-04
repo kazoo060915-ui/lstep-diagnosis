@@ -1,0 +1,648 @@
+/* ===================================================
+   体質診断 Webアプリケーション 和モダン・クリーンデザイン
+   =================================================== */
+
+:root {
+  --primary: #2d6a4f;        /* 深い若草色・深緑（安心感・漢方） */
+  --primary-light: #52b788;  /* 明るい緑 */
+  --primary-soft: #d8f3dc;   /* 優しい淡い緑 */
+  --accent: #d97706;         /* 柿色・温かみのあるゴールド（胃・エネルギー） */
+  --accent-light: #fef3c7;
+  --bg-main: #f9f8f5;        /* 生成り（和の温かみのある白） */
+  --bg-card: #ffffff;
+  --text-main: #2b2d42;      /* 濃い墨色 */
+  --text-sub: #6c757d;       /* 柔らかいグレー */
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 2px 8px rgba(45, 106, 79, 0.06);
+  --shadow-md: 0 4px 16px rgba(45, 106, 79, 0.1);
+  --shadow-lg: 0 8px 24px rgba(45, 106, 79, 0.15);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", "Yu Gothic", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* コンテナ */
+.app-container {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-card);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ヘッダー */
+.site-header {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  color: #ffffff;
+  padding: 28px 20px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.header-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #e8f5e9;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.site-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.site-subtitle {
+  font-size: 13px;
+  color: #d8f3dc;
+  font-weight: 400;
+}
+
+/* メインコンテンツ */
+.content-wrapper {
+  padding: 24px 18px 60px;
+  flex: 1;
+}
+
+/* 導入ボックス */
+.intro-card {
+  background: #fdfbf7;
+  border: 1px solid #ebd9c8;
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+  font-size: 13.5px;
+  color: #5c4033;
+  line-height: 1.7;
+}
+
+.intro-card strong {
+  color: #b45309;
+}
+
+/* フォームグループ */
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.form-label-desc {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-bottom: 10px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+}
+
+/* 流入元ラジオボタングループ */
+.radio-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.radio-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: #f8faf9;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-card input {
+  display: none;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #a3b18a;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.radio-card input:checked + .radio-custom {
+  border-color: var(--primary);
+}
+
+.radio-card input:checked + .radio-custom::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.radio-card:has(input:checked) {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+
+.radio-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* 設問セクション */
+.type-section {
+  background: #ffffff;
+  border: 1px solid #eef2ef;
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.type-section-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.type-section-num {
+  background: var(--primary);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.type-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.type-section-badge {
+  font-size: 11px;
+  background: #eef7ee;
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.type-section-desc {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-bottom: 14px;
+}
+
+/* 設問チェックリスト */
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.check-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 13px 14px;
+  background: #fbfbfa;
+  border: 1.5px solid #ecebe7;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.check-card input {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b7b6af;
+  border-radius: 5px;
+  margin-right: 12px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  transition: all 0.2s;
+}
+
+.check-card.checked,
+.check-card:has(input:checked) {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.check-card.checked .checkbox-custom,
+.check-card:has(input:checked) .checkbox-custom {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.check-card.checked .checkbox-custom::after,
+.check-card:has(input:checked) .checkbox-custom::after {
+  content: '';
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.check-text {
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* アクションバー (診断するボタン) */
+.submit-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.progress-info {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--primary);
+  background: var(--primary-soft);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.3);
+  transition: all 0.2s ease;
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(45, 106, 79, 0.2);
+}
+
+/* ===================================================
+   診断結果画面のスタイリング
+   =================================================== */
+
+.result-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 26px 20px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+  border-top: 6px solid var(--primary);
+}
+
+.result-user-greeting {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.result-badge {
+  display: inline-block;
+  background: var(--accent-light);
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.result-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1b4332;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.result-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #40916c;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.result-desc-box {
+  background: #f8faf8;
+  border-left: 4px solid var(--primary-light);
+  padding: 14px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* スコアメーター */
+.score-summary-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  margin-bottom: 24px;
+}
+
+.score-summary-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.score-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.score-row.highlight .score-name {
+  color: #1b4332;
+  font-weight: 700;
+}
+
+.score-row.highlight .score-val {
+  color: #b45309;
+  font-weight: 700;
+}
+
+.score-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.score-bar-bg {
+  height: 8px;
+  background: #edf2f7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, #52b788, #2d6a4f);
+}
+
+.score-row.highlight .score-bar-fill {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+/* プレゼントボックス */
+.present-section {
+  margin-bottom: 28px;
+}
+
+.present-section-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1b4332;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.present-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1.5px solid #d1fae5;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.present-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.present-card-badge {
+  display: inline-block;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.present-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.present-card-link-text {
+  font-size: 12.5px;
+  color: var(--primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 個別相談バナー */
+.consultation-card {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.consultation-badge {
+  display: inline-block;
+  background: #ea580c;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.consultation-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #7c2d12;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.consultation-desc {
+  font-size: 13.5px;
+  color: #9a3412;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.consultation-btn {
+  display: block;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 26px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+  transition: all 0.2s;
+}
+
+.consultation-btn:active {
+  transform: scale(0.98);
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 13px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* ユーティリティ */
+.hidden {
+  display: none !important;
+}
+
+/* ローディングオーバーレイ */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid #d8f3dc;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 14px;
+}
+
+.loading-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
