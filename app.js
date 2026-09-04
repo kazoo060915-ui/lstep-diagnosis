@@ -4,8 +4,8 @@
 
 // 設定項目（※導入時にご自身の環境に合わせて設定します）
 const APP_CONFIG = {
-  // LINE Developersで取得するLIFF ID（空欄の場合はブラウザ用テストモードとして動作）
-  liffId: '', 
+  // LINE Developersで取得するLIFF ID
+  liffId: '2011445361-LHNU7SmM', 
   // デプロイしたGoogle Apps Script (GAS) のウェブアプリURL
   gasEndpointUrl: 'https://script.google.com/macros/s/AKfycbx6RGbKAQH8OOS09sQH7uN58kTS92327NUxIZXBD-gYf7-YsNJHQKnis7j1TT7bB81B/exec'
 };
