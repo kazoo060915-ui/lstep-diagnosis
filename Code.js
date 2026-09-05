@@ -149,6 +149,7 @@ function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu('体質診断管理')
     .addItem('【初期設定】シートの自動生成', 'setupSpreadsheet')
+    .addItem('【全自動】薬膳・ツボのスライドを一括PDF変換', 'exportSlidesToPdfFolder')
     .addToUi();
 }
 
@@ -195,5 +196,60 @@ function setupSpreadsheet() {
     SpreadsheetApp.getUi().alert('シートの初期設定が完了しました！');
   } catch (e) {
     // エディタ直接実行時はUIがないため無視
+  }
+}
+
+/**
+ * 【全自動】Googleドライブ内の「薬膳」「ツボ」スライドを自動検索し、一括でPDF化して専用フォルダに保存
+ */
+function exportSlidesToPdfFolder() {
+  const folderName = '体質診断_完成PDF';
+  let targetFolder;
+  
+  // 1. 保存先フォルダの取得または新規作成
+  const folders = DriveApp.getFoldersByName(folderName);
+  if (folders.hasNext()) {
+    targetFolder = folders.next();
+  } else {
+    targetFolder = DriveApp.createFolder(folderName);
+  }
+  
+  console.log(`📁 保存先フォルダ: ${folderName} (フォルダID: ${targetFolder.getId()})`);
+
+  // 2. スライドファイルを検索（ゴミ箱除外）
+  const query = "mimeType = 'application/vnd.google-apps.presentation' and trashed = false";
+  const files = DriveApp.searchFiles(query);
+  
+  let count = 0;
+
+  while (files.hasNext()) {
+    const file = files.next();
+    const title = file.getName();
+
+    // 薬膳、ツボ、養生、胃、Lighten に関連するスライドのみ自動抽出
+    if (title.includes('薬膳') || title.includes('ツボ') || title.includes('養生') || title.includes('胃') || title.includes('Lighten')) {
+      const pdfBlob = file.getAs('application/pdf');
+      const pdfName = `${title}.pdf`;
+      
+      // 同名の古いPDFがあれば上書き
+      const existing = targetFolder.getFilesByName(pdfName);
+      while (existing.hasNext()) {
+        existing.next().setTrashed(true);
+      }
+      
+      // PDFとしてフォルダに保存
+      targetFolder.createFile(pdfBlob.setName(pdfName));
+      count++;
+      console.log(`✅ [${count}] PDF変換完了: ${pdfName}`);
+    }
+  }
+
+  const msg = `🎉 全自動PDF変換が完了しました！\n合計 ${count} 件のスライドをPDF化し、Googleドライブの「${folderName}」フォルダに保存しました。`;
+  console.log(msg);
+
+  try {
+    SpreadsheetApp.getUi().alert(msg);
+  } catch (e) {
+    // エディタからの直接実行時は無視
   }
 }
