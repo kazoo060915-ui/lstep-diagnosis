@@ -68,8 +68,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kikyo.pdf',
     tubo: '胃の元気を底上げする「足三里・中脘のツボ押し集」',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kikyo.pdf',
-    video: '胃腸を元気に動かす！基本の胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-1'
+    video: '胃から代謝を上げる：胃のトレーニング動画3本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbzqrnyau'
   },
   'kitai': {
     title: '気滞（きたい）タイプ',
@@ -79,8 +79,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kitai.pdf',
     tubo: 'みぞおちの緊張を緩める「太衝・壇中のツボ押し集」',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kitai.pdf',
-    video: '自律神経をリラックスさせて胃を動かす胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-2'
+    video: '緊張をほぐす：胃のトレーニング動画3本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbzykh9c0'
   },
   'inkyo': {
     title: '陰虚（いんきょ）タイプ',
@@ -90,8 +90,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_inkyo.pdf',
     tubo: '潤いを補い熱を逃がす「太渓・三陰交のツボ押し集」',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_inkyo.pdf',
-    video: '乾いた胃を優しく労わるリラクゼーション胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-3'
+    video: '熱を逃がし代謝を上げる：胃のトレーニング動画3本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbzvmgiji'
   },
   'tansitsu': {
     title: '痰湿（たんしつ）タイプ',
@@ -101,8 +101,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_tansitsu.pdf',
     tubo: '胃腸の水分代謝を促進する「豊隆・陰陵泉のツボ押し集」',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_tansitsu.pdf',
-    video: 'お腹の巡りを活性化して老廃物を流す胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-4'
+    video: 'ゴミを燃焼させる：胃のトレーニング動画3本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbxv7a8ck'
   },
   'shokushaku': {
     title: '食積（しょくしゃく）タイプ',
@@ -112,8 +112,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_shokushaku.pdf',
     tubo: '食べたものの排泄をスムーズにする「天枢・下脘のツボ押し集」',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_shokushaku.pdf',
-    video: '胃の蠕動（ぜんどう）運動を呼び覚ます胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-5'
+    video: '停滞を解消する：胃のトレーニング動画3本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbdee7r2o'
   },
 
   // --- 混合タイプ (10パターン) ---
@@ -125,8 +125,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kikyo_kitai.pdf',
     tubo: '元気を補い気の巡りをスムーズにするツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kikyo_kitai.pdf',
-    video: '気虚＋気滞のためのリセット胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-6'
+    video: '滞った気をスッと流す：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahcjuuqsxc'
   },
   'kikyo_inkyo': {
     title: '気虚 ＋ 陰虚 混合タイプ',
@@ -136,8 +136,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kikyo_inkyo.pdf',
     tubo: '胃の生命力を底上げして潤すツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kikyo_inkyo.pdf',
-    video: '繊細な胃を優しくいたわる胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-7'
+    video: '乾いた胃を優しく癒やす：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbzvmgiji'
   },
   'kikyo_tansitsu': {
     title: '気虚 ＋ 痰湿 混合タイプ',
@@ -147,8 +147,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kikyo_tansitsu.pdf',
     tubo: '胃腸を活性化し水分代謝を促すツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kikyo_tansitsu.pdf',
-    video: '重だるい胃を軽やかにする胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-8'
+    video: '滞りと湿気を一気に流す：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahcllbll88'
   },
   'kikyo_shokushaku': {
     title: '気虚 ＋ 食積 混合タイプ',
@@ -158,8 +158,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kikyo_shokushaku.pdf',
     tubo: '弱った胃の消化力をやさしく支えるツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kikyo_shokushaku.pdf',
-    video: '胃の負担を減らし消化を促す胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-9'
+    video: '弱った胃を優しく動かす：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahchzqn268'
   },
   'kitai_inkyo': {
     title: '気滞 ＋ 陰虚 混合タイプ',
@@ -169,8 +169,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kitai_inkyo.pdf',
     tubo: '高ぶる神経を落ち着かせ潤いをチャージするツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kitai_inkyo.pdf',
-    video: '自律神経の緊張を解きほぐす胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-10'
+    video: '滞りと熱をスッと逃がす：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahcmesrpia'
   },
   'kitai_tansitsu': {
     title: '気滞 ＋ 痰湿 混合タイプ',
@@ -180,8 +180,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kitai_tansitsu.pdf',
     tubo: '喉とお腹のつかえを通すツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kitai_tansitsu.pdf',
-    video: '巡りとデトックスを加速する胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-11'
+    video: '心と体の詰まりをスッキリ流す：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahclzz1g0g'
   },
   'kitai_shokushaku': {
     title: '気滞 ＋ 食積 混合タイプ',
@@ -191,8 +191,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kitai_shokushaku.pdf',
     tubo: 'みぞおちの詰まりを押し流すツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kitai_shokushaku.pdf',
-    video: '胃の緊張をリセットして排泄を助ける胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-12'
+    video: '止まった胃を再起動する：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahbdee7r2o'
   },
   'inkyo_tansitsu': {
     title: '陰虚 ＋ 痰湿 混合タイプ',
@@ -202,8 +202,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_inkyo_tansitsu.pdf',
     tubo: '水分バランスを整えるツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_inkyo_tansitsu.pdf',
-    video: '水はけを整えて胃を正常化する胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-13'
+    video: '熱と湿気を整える：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahb6vaxcic'
   },
   'inkyo_shokushaku': {
     title: '陰虚 ＋ 食積 混合タイプ',
@@ -214,7 +214,7 @@ const RESULT_TEMPLATES = {
     tubo: '内側の熱を鎮め潤いを守る：黄金のツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_inkyo_shokushaku.pdf',
     video: '乾いた胃を優しく癒やし流す：胃のトレーニング動画4本',
-    video_url: 'https://vimeo.com/your-video-id-14'
+    video_url: 'https://inokazusensei.my.canva.site/dahcmcwh8so'
   },
   'tansitsu_shokushaku': {
     title: '痰湿 ＋ 食積 混合タイプ',
@@ -224,8 +224,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_tansitsu_shokushaku.pdf',
     tubo: '強力に胃腸の排泄をサポートするツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_tansitsu_shokushaku.pdf',
-    video: '胃の滞りをすっきり解消する胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-15'
+    video: '渋滞と湿気を一気に流す：胃のトレーニング動画4本',
+    video_url: 'https://inokazusensei.my.canva.site/dahb6vaxcic'
   },
 
   // --- 乱れなしタイプ ---
@@ -237,8 +237,8 @@ const RESULT_TEMPLATES = {
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_healthy.pdf',
     tubo: '日々の疲れを残さない万能メンテナンスツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_healthy.pdf',
-    video: '健康な胃を一生保つための基本胃のトレーニング動画',
-    video_url: 'https://vimeo.com/your-video-id-16'
+    video: '一生健康な胃を保つ：基本の胃のトレーニング動画',
+    video_url: 'https://inokazusensei.my.canva.site/dahbzqrnyau'
   }
 };
 
