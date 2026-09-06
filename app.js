@@ -334,8 +334,7 @@ async function sendResultToLineTalk(name, diagnosis) {
     `🎁 あなた専用のプレゼント\n` +
     `・薬膳ガイド: ${tpl.yakuzen}\n${tpl.yakuzen_url}\n\n` +
     `・黄金のツボ押し集:\n${tpl.tubo_url}\n\n` +
-    `・胃のトレーニング動画:\n${tpl.video_url}\n\n` +
-    `薬剤師の無料個別体験面談はこちら👇\n${SYSTEM_CONFIG.consultation_url}`;
+    `・胃のトレーニング動画:\n${tpl.video_url}`;
 
   try {
     await liff.sendMessages([
@@ -390,11 +389,6 @@ function renderResultView(name, diagnosis) {
   if (videoLink) {
     videoLink.href = tpl.video_url;
     document.getElementById('text-video-title').textContent = tpl.video;
-  }
-
-  const consultLink = document.getElementById('link-consultation');
-  if (consultLink) {
-    consultLink.href = SYSTEM_CONFIG.consultation_url;
   }
 }
 
