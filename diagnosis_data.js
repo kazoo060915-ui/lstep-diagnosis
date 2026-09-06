@@ -176,7 +176,7 @@ const RESULT_TEMPLATES = {
     title: '気滞 ＋ 痰湿 混合タイプ',
     subtitle: 'ストレスと水毒が合体し、胃や喉に重苦しいつかえがある状態',
     description: '気の巡りが悪いために水分代謝も滞り、ドロドロとした水分が胃や喉に詰まっています。「喉に梅の種が詰まったような違和感（梅核気）」「お腹が張ってガスも溜まり重だるい」状態になりやすいです。',
-    yakuzen: '混合タイプ専用「気の巡りと水はけを一気に改善する 薬膳ガイド」',
+    yakuzen: '混合タイプ専用「気の巡りと水はけをすっきりと整える 薬膳ガイド」',
     yakuzen_url: 'https://lstep-diagnosis.vercel.app/pdf/yakuzen_kitai_tansitsu.pdf',
     tubo: '喉とお腹のつかえを通すツボ押し集',
     tubo_url: 'https://lstep-diagnosis.vercel.app/pdf/tubo_kitai_tansitsu.pdf',

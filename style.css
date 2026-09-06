@@ -540,59 +540,6 @@ body {
   gap: 4px;
 }
 
-/* 個別相談バナー */
-.consultation-card {
-  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-  border: 1.5px solid #fed7aa;
-  border-radius: var(--radius-lg);
-  padding: 22px 18px;
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.consultation-badge {
-  display: inline-block;
-  background: #ea580c;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 12px;
-  border-radius: 12px;
-  margin-bottom: 8px;
-}
-
-.consultation-title {
-  font-size: 18px;
-  font-weight: 800;
-  color: #7c2d12;
-  margin-bottom: 8px;
-  line-height: 1.35;
-}
-
-.consultation-desc {
-  font-size: 13.5px;
-  color: #9a3412;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-
-.consultation-btn {
-  display: block;
-  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-  color: #ffffff;
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 26px;
-  font-size: 15px;
-  font-weight: 700;
-  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
-  transition: all 0.2s;
-}
-
-.consultation-btn:active {
-  transform: scale(0.98);
-}
-
 .secondary-btn {
   width: 100%;
   padding: 13px;
@@ -604,6 +551,22 @@ body {
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
+}
+
+/* 免責事項・フッター */
+.site-footer {
+  margin-top: 32px;
+  padding: 20px 12px 10px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.disclaimer-text {
+  font-size: 11px;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+  text-align: left;
 }
 
 /* ユーティリティ */
